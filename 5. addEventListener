@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+      <div class="alert-box" id="alert">
+        <p id="k">알림창</p>
+        <button id="close">닫기</button>
+      </div>
+
+      <button onclick="iD()">아이디</button>
+      <button onclick="pw()">비밀번호</button>
+
+      <script type="text/javascript">
+        document.getElementById('close').addEventListener('click',function(){
+          document.getElementById('alert').style.display='none';
+        });
+        function iD() {
+          document.getElementById('k').innerHTML='아이디를 입력하세요';
+          document.getElementById('alert').style.display='block';
+        }
+        function pw() {
+          document.getElementById('k').innerHTML='비밀번호를 입력하세요';
+          document.getElementById('alert').style.display='block';
+        }
+      </script>
+
+  </body>
+</html>
