@@ -5,3 +5,15 @@
   border-radius: 5px;
   display: none;
 }
+
+.list-group {
+  display: none
+}
+
+.show {
+  display: block
+}
+
+.modal {
+  display: none;
+}
