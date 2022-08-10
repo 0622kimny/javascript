@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+      <div class="alert-box" id="haha">알림창</div>
+      <button onclick="openBox()">보여줘</button>
+      <button onclick="closeBox()">닫아줘</button>
+
+      <script type="text/javascript">
+        function openBox() {
+          document.getElementById('haha').style.display='block';
+        }
+        function closeBox() {
+          document.getElementById('haha').style.display='none';
+        }
+      </script>
+
+  </body>
+</html>
