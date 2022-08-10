@@ -17,3 +17,14 @@
 .modal {
   display: none;
 }
+
+.modalx {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show-modal {
+  visibility: visible;
+  opacity: 1;
+}
