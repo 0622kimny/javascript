@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <title></title>
+  </head>
+  <body>
+
+    <div class="alert alert-danger">
+      <span class="ll">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+  </body>
+  <script>
+
+    setTimeout(function() {
+      $('.alert').hide();
+    }, 5000);
+
+    setInterval(function() {
+      console.log('안녕');
+    },1000);
+
+    var count=5;
+    setInterval(function() {
+      count=count-1;
+      if(count>=0) {
+        document.querySelector('.ll').innerHTML=count;
+      }
+    },1000);
+
+  </script>
+</html>
