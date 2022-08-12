@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">JSShop</span>
+            <span class="ms-auto mx-3 badge bg-dark">Dark</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div style="height: 1000px"></div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+    </div> 
+
+  </body>
+  <script>
+    
+    $('.lorem').on('scroll',function() {
+        var 스크롤양=document.querySelector('.lorem').scrollTop;
+        var 실제높이=document.querySelector('.lorem').scrollHeight;
+        var 높이=document.querySelector('.lorem').clientHeight;
+        if (스크롤양+높이>실제높이-10) {
+            alert('다 읽었습니다');
+        }
+    });
+
+    window.addEventListener('scroll', function(){
+        if(window.scrollY>100) {
+            $('.navbar-brand').css('font-size','20px');
+        }
+        else {
+            $('.navbar-brand').css('font-size','30px');
+        }
+    });
+
+  </script>
+</html> 
