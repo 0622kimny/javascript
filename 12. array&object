@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  
+  <div class="container mt-3">
+    <div class="card p-3">
+      <span class="car-title">상품명</span>
+      <span class="car-price">가격</span>
+  </div>
+  
+  <script>
+
+    var car = { name : '소나타', price : {50000,3000,4000} }
+    document.querySelector('.car-title').innerHTML=car.name;
+    document.querySelector('.car-price').innerHTML=car.price;
+
+  </script>
+</html>
