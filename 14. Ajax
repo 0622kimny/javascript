@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="row"></div>
+    </div> 
+
+    <div class="container">
+        <button class="btn btn-danger" id="more">더보기</button>
+    </div>
+    
+  </body>
+
+  <script>
+
+    var products= [
+        {id:0, price:70000, title:'Blossom Dress'},
+        {id:1, price:50000, title:'Springfield Shirt'},
+        {id:2, price:60000, title:'Black Monastery'}
+    ];
+
+    products.forEach((a,i)=>{
+        var box=`<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격:${products[i].price}</p>
+            </div>`
+        $('.row').append(box);
+    });
+    
+    $('#more').click(function() {
+        var count=0;
+        count++
+        if(count==1) {
+            $.get('https://codingapple1.github.io/js/more1.json')
+            .done((data)=>{
+                data.forEach((a,i)=>{
+                    var box=`<div class="col-sm-4">
+                        <img src="https://via.placeholder.com/600" class="w-100">
+                        <h5>${data[i].title}</h5>
+                        <p>가격:${data[i].price}</p>
+                        </div>`
+                    $('.row').append(box);
+                });
+            });
+        }
+        else {
+            $.get('https://codingapple1.github.io/js/more2.json')
+            .done((data)=>{
+                data.forEach((a,i)=>{
+                    var box=`<div class="col-sm-4">
+                        <img src="https://via.placeholder.com/600" class="w-100">
+                        <h5>${data[i].title}</h5>
+                        <p>가격:${data[i].price}</p>
+                        </div>`
+                    $('.row').append(box);
+                });
+            });
+            $('.btn btn-danger').addClass('form-hide');
+        }
+    });
+
+  </script> 
+</html>
