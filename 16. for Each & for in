@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+
+  <form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option>모자</option>
+      <option>셔츠</option>
+      <option>바지</option>
+    </select>
+    <select class="form-select mt-2 form-hide">
+    </select>
+  </form>
+
+  <div id="test">
+
+  </div>
+  
+  <script>
+    
+    var pants=[28,30,32];
+    var shirt=[95,100,105,110];
+
+    $('.form-select').eq(0).on('input', function() {
+      
+      var value=this.value;
+      
+      if(value=='셔츠') {
+        $('.form-select').eq(1).removeClass('form-hide');
+        shirt.forEach((i)=>{
+          $('.form-select').eq(1).html(`<option>${i}</option>`);
+        });
+      }
+      
+      else if(value=='모자') {
+        $('.form-select').eq(1).addClass('form-hide');
+      }
+      
+      else if(value=='바지') {
+        $('.form-select').eq(1).removeClass('form-hide');
+        pants.forEach((k)=> {
+          $('.form-select').eq(1).html(`<option>${k}</option>`);
+        });
+      }
+    });
+    
+    var obj={name:'kim', age:'21'}
+    for(var key in obj) {
+      console.log(obj[key]);
+    }
+
+  </script>
+</html>
