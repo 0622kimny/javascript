@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div id="quiz">
+      <h4>물에 빠지면 누구 먼저 구할 거냐능</h4>
+      <button>남자친구</button>
+      <button>부모님</button>
+      <button>강아지</button>
+    </div>
+
+  </body>
+  <script>
+
+    $('#quiz').click((e)=>{
+      switch (e.target.innerHTML) {
+        case '남자친구':
+          alert('다시 생각해보세요');
+          break
+        case '부모님':
+          alert('효녀시네요');
+          break
+        default:
+          alert('강아지는 귀여우니까');
+      }
+    });
+   
+  </script>
+</html>
