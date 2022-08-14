@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="main.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="row"></div>
+    </div> 
+
+    <div class="container">
+        <button class="btn btn-danger" id="more">더보기</button>
+    </div>
+
+    <div class="container my-3">
+        <button class="btn btn-danger" id="price">상품명 내림차순 정렬</button>
+    </div>
+
+    <div class="container my-3">
+      <button class="btn btn-danger" id="60000">6만원 이하 상품만 보기</button>
+    </div>
+    
+  </body>
+
+  <script>
+
+    var products= [
+        {id:0, price:70000, title:'Blossom Dress'},
+        {id:1, price:50000, title:'Springfield Shirt'},
+        {id:2, price:60000, title:'Black Monastery'}
+    ];
+
+    products.forEach((a,i)=>{
+        var box=`<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격:${products[i].price}</p>
+            </div>`
+        $('.row').append(box);
+    });
+    
+    var ar=[7,53,5,2,9];
+      ar.sort((a,b)=>{
+          return a-b
+      });
+      console.log(ar);
+
+      var arr=ar.filter((a)=>{
+        return a<4
+      });
+      console.log(arr);
+    //.sort()는 원본 변형O
+    //.filter()는 원본X
+      
+      var arrr=ar.map((a)=>{
+        return a*4
+      });
+      console.log(arrr);
+
+    $('#price').click(()=>{
+      function SortArray(x,y) {
+        if (x.title < y.title) {return -1;}
+        if (x.title > y.title) {return 1;}
+        return 0;
+      }
+      var s=products.sort(SortArray);
+
+        $('.row').html('');
+        products.forEach((a,i)=>{
+          var box=`<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${products[i].title}</h5>
+              <p>가격:${products[i].price}</p>
+              </div>`
+          $('.row').append(box);
+        });
+    });
+
+    $('#60000').click(()=>{
+      var kk=products.filter((a)=>{
+        return a.price<=60000
+      });
+  
+      $('.row').html('');
+        products.forEach((a,i)=>{
+        var box=`<div class="col-sm-4">
+             <img src="https://via.placeholder.com/600" class="w-100">
+             <h5>${products[i].title}</h5>
+             <p>가격:${products[i].price}</p>
+             </div>`
+         $('.row').append(box);
+      });
+    });
+    
+  </script> 
+</html>
